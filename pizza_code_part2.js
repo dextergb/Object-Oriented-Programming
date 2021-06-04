@@ -9,10 +9,11 @@ class Pizza {
     this.toppings.push(topping);
   }
   setSize(size) {
-    this.size = size;
-  }
-  getSize() {
-    return this.size;
+    if (size === "s" || size === "m" || size === "l") {
+      this.size = size;
+    }
+    // else we could throw an error, return false, etc.
+    // We choose here to ignore all other values!
   }
 }
 
@@ -28,6 +29,5 @@ pizza2.addTopping("more cheese");
 console.log(pizza2.toppings); // ["cheese", "more cheese"];
 
 // DRIVER CODE
-const pizza = new Pizza();
-pizza.setSize("m");
-pizza.getSize(); // m
+let pizza = new Pizza();
+pizza.setSize("s");
