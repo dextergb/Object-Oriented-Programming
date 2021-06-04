@@ -15,6 +15,11 @@ class Pizza {
     // else we could throw an error, return false, etc.
     // We choose here to ignore all other values!
   }
+  getPrice() {
+    const basePrice = 10;
+    const toppingPrice = 2;
+    return basePrice + this.toppings.length * toppingPrice;
+  }
 }
 
 let pizza1 = new Pizza("large", "thin");
@@ -31,3 +36,4 @@ console.log(pizza2.toppings); // ["cheese", "more cheese"];
 // DRIVER CODE
 let pizza = new Pizza();
 pizza.setSize("s");
+pizza.getPrice();
