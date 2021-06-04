@@ -1,4 +1,4 @@
-// Superclass
+// Super class
 class Person {
   constructor(name, quirkyFact) {
     this.name = name;
@@ -10,15 +10,12 @@ class Person {
   }
 }
 
-// Subclass
 class Mentor extends Person {
-  // Completely re-define the bio method since it has more to say
+  // Mentor bios need to include a bit more info
   bio() {
-    return `I'm a mentor at Lighthouse Labs. My name is ${this.name} and here's my quirky fact: ${this.quirkyFact}`;
+    return `I'm a mentor at Lighthouse Labs. ${super.bio()}`;
   }
 }
-
-// The Student class doesn't need to define bio since it can just use the one from Person
 
 // DRIVER CODE
 
