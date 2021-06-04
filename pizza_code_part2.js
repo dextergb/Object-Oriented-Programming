@@ -34,5 +34,6 @@ console.log(pizza2.toppings); // ["cheese", "more cheese"];
 
 // DRIVER CODE
 let pizza = new Pizza();
-pizza.setSize("s");
-pizza.getPrice();
+
+pizza.price; // instead of getPrice()
+pizza.size = "s"; // instead of setSize(size)
