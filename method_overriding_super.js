@@ -17,7 +17,15 @@ class Mentor extends Person {
   }
 }
 
+class Student extends Person {
+  bio() {
+    return `I'm a student at Lighthouse Labs (aka Labber). ${super.bio()}`;
+  }
+}
+
 // DRIVER CODE
 
 const bob = new Mentor("Bob Ross", "I like mountains way too much");
 console.log(bob.bio());
+const jim = new Student("Jim", "I like to code");
+console.log(jim.bio());
