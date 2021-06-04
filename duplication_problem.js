@@ -1,28 +1,25 @@
-class Student {
-  // this constructor is identical to that of a mentor!
+// This class represents all that is common between Student and Mentor
+class Person {
+  // moved here b/c it was identical
   constructor(name, quirkyFact) {
     this.name = name;
     this.quirkyFact = quirkyFact;
   }
 
-  // here is a method that is specific to students
-  enroll(cohort) {
-    this.cohort = cohort;
-  }
-
-  // identical! Smells of code duplication
+  // moved here b/c it was identical
   bio() {
     return `My name is ${this.name} and here's my quirky fact: ${this.quirkyFact}`;
   }
 }
 
-class Mentor {
-  // this constructor is identical to that of a student!
-  constructor(name, quirkyFact) {
-    this.name = name;
-    this.quirkyFact = quirkyFact;
+class Student extends Person {
+  // stays in Student class since it's specific to students only
+  enroll(cohort) {
+    this.cohort = cohort;
   }
+}
 
+class Mentor extends Person {
   // specific to mentors
   goOnShift() {
     this.onShift = true;
@@ -32,9 +29,13 @@ class Mentor {
   goOffShift() {
     this.onShift = false;
   }
-
-  // identical! Smells of code duplication
-  bio() {
-    return `My name is ${this.name} and here's my quirky fact: ${this.quirkyFact}`;
-  }
 }
+
+/*
+* Now there is a general Person class that contains the shared code.
+* Student and Mentor inherit behaviour and state information from Person using the keyword extends.
+* They also have their own code that reflects behaviour and information only pertaining to themselves.
+
+* Student and Mentor are subclasses of the Person class, since they are extensions of that class.
+* Person is the superclass in this relationship.
+*/
