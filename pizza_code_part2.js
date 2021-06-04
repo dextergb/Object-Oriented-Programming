@@ -8,17 +8,16 @@ class Pizza {
   addTopping(topping) {
     this.toppings.push(topping);
   }
-  setSize(size) {
-    if (size === "s" || size === "m" || size === "l") {
-      this.size = size;
-    }
-    // else we could throw an error, return false, etc.
-    // We choose here to ignore all other values!
-  }
-  getPrice() {
+  get price() {
     const basePrice = 10;
     const toppingPrice = 2;
     return basePrice + this.toppings.length * toppingPrice;
+  }
+
+  set size(size) {
+    if (size === "s" || size === "m" || size === "l") {
+      this._size = size;
+    }
   }
 }
 
