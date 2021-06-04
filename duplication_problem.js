@@ -4,11 +4,12 @@ class Person {
   constructor(name, quirkyFact) {
     this.name = name;
     this.quirkyFact = quirkyFact;
+    this.email = email;
   }
 
   // moved here b/c it was identical
   bio() {
-    return `My name is ${this.name} and here's my quirky fact: ${this.quirkyFact}`;
+    return `My name is ${this.name} and here's my quirky fact: ${this.quirkyFact}. My email is ${this.email}`;
   }
 }
 
